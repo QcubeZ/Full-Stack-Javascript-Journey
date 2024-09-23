@@ -1,0 +1,759 @@
+// 01. Basics
+
+// let isJsProgrammingLanguage = true;
+// let isJsHard = false;
+// let favNumb = 7;
+
+// let addNumberWithUndefined = favNumb + undefined;
+
+// console.log(isJsProgrammingLanguage);
+// console.log(isJsHard);
+// console.log(addNumberWithUndefined);
+
+// -----------------------------------------------------------------
+// Comparison Operators
+
+// --> Relation/Relational Operators
+// > Greater Than
+// < Less than
+// >= Greater Than or Equal To
+// <= Less than or Equal To
+// console.log(10 > 10); //false
+// console.log(9 < 10); //true
+// console.log(10 >= 10); //true
+// console.log(10 <= 10); //true
+
+// --> Equality Operators
+// === strict equality (type + value)
+// !== strict non-equality operators (type + value)
+// == lose equality operator (value)
+// != lose not equality operator
+
+// let table = [
+//   { name: "John", age: 20 },
+//   { name: "Alex", age: 16 },
+// ];
+
+// console.table(table);
+
+// //strict equality (type + value) checks if type and value is same
+// console.log(table[0].name === table[1].name); //false even though type is same(string) but value is not
+
+// //strict non-equality operators (type + value) checks if type and value is not the same
+// console.log(10 !== 10); // false because theyre equal
+
+// //lose equality operator (value)[Checks if value = value then its true if not then false]
+// console.log(10 == "10"); //true because the value is the same even though type is not the same
+
+// //lose not equality operator (value)[Checks if value = value then its false if not then true]
+// console.log(10 != 10); //false becuase value is the same
+
+// Challenge
+// let firstFavNumb = 7;
+// let secondFavNumb = 6;
+// --> Relation/Relational Operators
+// console.log(firstFavNumb > secondFavNumb); //true
+// console.log(firstFavNumb < secondFavNumb); //false
+// console.log(firstFavNumb >= secondFavNumb); //ture
+// console.log(firstFavNumb <= secondFavNumb); //false
+
+// // --> Equality Operators
+// console.log(firstFavNumb === secondFavNumb); // false same type not same value
+// console.log(firstFavNumb !== secondFavNumb); // true same type not same value
+// console.log(firstFavNumb == secondFavNumb); // false value not the same
+// console.log(firstFavNumb != secondFavNumb); // true value not the same
+
+// ---------------------------------------------------------------------
+// Strings
+// let firstName = "John";
+// let secondName = "Michael";
+// let middleName = "Buho";
+// let lastName = "Sarita";
+
+// const fullName =
+//   firstName + " " + secondName + " " + middleName + " " + lastName;
+
+// console.log(fullName);
+
+// 1. Concatenation
+// In programming, concatenation means combining or joining strings (text) together. When you concatenate strings, you take two or more strings and join them into one longer string.
+// let conFullName = firstName
+//   .concat(secondName)
+//   .concat(middleName)
+//   .concat(lastName);
+// console.log(conFullName);
+
+// 2. Append
+// In programming, appending refers to adding an element to the end of a data structure, such as a string, array, or list.
+// let str = "Hello";
+// str += " World"; // Append " World" to the existing string
+// // str -= "lo";  // This will cause an error or result in NaN
+// console.log(str); // Outputs: Hello World
+
+// let numbers = [1, 2, 3];
+// numbers.push(4); // Appends 4 to the end of the array
+// console.log(numbers); // Outputs: [1, 2, 3, 4]
+
+// let num = 10;
+// num -= 4; // Equivalent to num = num - 4
+// console.log(num); // Outputs: 6
+
+// 3. Length
+// In JavaScript, the .length property is used to determine the number of elements in an array or the number of characters in a string.
+// console.log(firstName.length); // Outputs: 4
+
+// let text = "Hello, World!";
+// console.log(text.length);  // Outputs: 13
+
+// 4. Cases
+// console.log(firstName.toLowerCase()); //Outputs: john
+// console.log(firstName.toUpperCase()); //Outputs: JOHN
+
+// 5. Slice
+// In JavaScript, the .slice() method is used to extract a portion of an array or string without modifying the original array or string. It returns a new array or string containing the selected elements or characters.
+// string.slice(startIndex, endIndex)
+// startIndex: The index at which to begin extraction (inclusive).
+// endIndex: The index at which to end extraction (exclusive). This parameter is optional; if omitted, the slice will go to the end of the string.
+// console.log(firstName.slice(1, 3)); //returns oh
+
+// 6. Split & Join
+// The .split() method is used to divide a string into an array of substrings based on a specified delimiter (a character or a sequence of characters).
+// string.split(delimiter, limit)
+// delimiter: The string or character at which to split the original string. If omitted, the entire string is returned as a single element array.
+// limit: (Optional) The maximum number of splits to perform.
+// Example:
+// let text = "Hello, World!";
+// let words = text.split(", "); // Splits at the comma and space
+// console.log(words); // Outputs: ["Hello", "World!"]
+
+// Example with Limit:
+// let text = "one,two,three,four";
+// let limitedSplit = text.split(",", 2); // Limits to 2 splits
+// console.log(limitedSplit); // Outputs: ["one", "two"]
+
+// The .join() method is used to combine the elements of an array into a single string, using a specified separator.
+// array.join(separator)
+// separator: The string or character to insert between each element in the resulting string. If omitted, the elements are joined with a comma by default.
+
+// Example:
+// let words = ["Hello", "World!"];
+// let sentence = words.join("-"); // Joins with a space of -
+// console.log(sentence); // Outputs: "Hello World!"
+
+// //Example with Default Separator:
+// let numbers = [1, 2, 3, 4, 5];
+// let numberString = numbers.join(); // Joins with a comma
+// console.log(numberString); // Outputs: "1,2,3,4,5"
+
+// 7. Includes
+// In JavaScript, the .includes() method is used to determine whether a string or an array contains a specified element or substring. It returns a boolean value: true if the element or substring is found, and false otherwise.
+// string.includes(searchString, startPosition)
+// searchString: The substring you want to search for.
+// startPosition: (Optional) The index at which to begin the search. The default is 0.
+
+// Example:
+// let text = "Hello, World!";
+// console.log(text.includes("World")); // Outputs: true
+// console.log(text.includes("world")); // Outputs: false (case-sensitive)
+
+// For Arrays:
+// array.includes(element, fromIndex)
+// element: The element you want to check for in the array.
+// fromIndex: (Optional) The index at which to begin the search. Defaults to 0.
+
+// Example:
+// let numbers = [1, 2, 3, 4, 5];
+// console.log(numbers.includes(3)); // Outputs: true
+// console.log(numbers.includes(6)); // Outputs: false
+// console.log(numbers.includes(3, 3)); // Outputs: false (search starts at index 3)
+
+// 8. Trim
+// Removes whitespace from both ends of a string (leading and trailing spaces) without modifying the original string.
+
+// let text = "   Hello, World!   ";
+// let trimmedText = text.trim(); // Outputs: "Hello, World!"
+
+// -------------------------------------------------------------------------------------------------------------------------------------
+// in JavaScript, backticks (`) are used for template literals, which allow for multi-line strings and string interpolation.
+// let name = "John";
+// let greeting = `Hello, ${name}!`; // Outputs: "Hello, John!"
+
+// let appendBackTickFullName = `${firstName} ${secondName} ${middleName} ${lastName}`//Outputs: John Michael Buho Sarita
+
+// if you're using Cheerio to select elements by class, you need to use a period (.) before the class name.
+// in finding div classNames
+// let className = "book-item";
+// let novels = $(`.${className}`); // Selects all elements with the className "book-item"
+// Use $(".class-name") for classes.
+// Use $("#id-name") for IDs.
+// Use $("tagName") for elements (like $("div")).
+// -------------------------------------------------------------------------------------------------------------------------------------
+
+// Challenge
+// let favCharacterFirstName = "Arthur";
+// let favCharacterLastName = "Leywin";
+// let favCharacterFullName = `${favCharacterFirstName} ${favCharacterLastName}`;
+// console.log(favCharacterFullName);
+
+// let message =
+//   "My favourite character is Arthur Leywin because i like how his story progress.";
+// let messageAppender = "The Show Is 'The Beginning After The End'";
+// let appendedMessage = `${message} ${messageAppender}`;
+// console.log(appendedMessage);
+
+// ----------------------------------------------------------------------------------------------------
+// Type conversion
+
+// let money = "50";
+
+// Convert To Number
+// money = parseInt(money);
+// or
+// money = +money
+// or
+// money = Number(money)
+
+// Convert To String
+// money = money.toString()
+// or
+// money = String(money)
+
+// Conver To Decimal
+// money = parseFloat(money)
+
+// console.log(typeof money);
+
+// -------------------------------------------------------------------------------------------------------------------------
+
+// 02. Control Flow
+
+// Conditional Statements
+
+// Use && for "and"
+// Use || for "or"
+
+// If, else if, else
+// let a = 10;
+// let b = 20;
+
+// if (a > b) {
+//   console.log("a > b");
+// } else if (a < b) {
+//   console.log("a < b");
+// } else {
+//   console.log("a = b");
+// }
+
+// let time = 10;
+// let msg;
+
+// if (time < 12) {
+//   msg = "Good Morning!";
+// } else if (time > 12) {
+//   msg = "Good Afternoon!";
+// } else {
+//   msg = "Good Evening!";
+// }
+
+// console.log(`Time is: ${time}, ${msg}`);
+
+// let password = "daskmd44";
+// let passwordLength = password.length;
+// let passwordCondition;
+
+// if (password && passwordLength >= 8) {
+//   passwordCondition = "Password accepted.";
+// } else {
+//   passwordCondition = "too short!";
+// }
+
+// console.log(`Password Condition: ${passwordCondition}`);//Outputs: Password Condition: Password Accepted.
+// --------------------------------------------------------------------------------------------------------------------
+
+// Switch Statements
+// Shares the almost same concept of conditional statements(if, else if, else)
+// will continue roaming cases until used "break"
+
+// let value = 1
+// switch (value) {
+//   case 1:
+//       // Do something for case 1
+//       break;
+//   case 2:
+//       // Do something for case 2
+//       break;
+//   default:
+//       // Do something if no cases match
+// }
+
+// let power = 0;
+
+// switch (power) {
+//   case 0:
+//     console.log("Lights Off");
+//     break;
+//   case 1:
+//     console.log("Lights On");
+//     break;
+//   default:
+//     console.log("Not configured yet!");
+// }
+
+// let day = "Monday"; // Can use Number(1-7) or day Name
+// let dayMsg;
+
+// switch (day) {
+//   case 1:
+//   case "Monday":
+//     dayMsg = `Today is Monday`;
+//     break;
+//   case 2:
+//   case "Tuesday":
+//     dayMsg = `Today is Tuesday`;
+//     break;
+//   case 3:
+//   case "Wednesday":
+//     dayMsg = `Today is Wednesday`;
+//     break;
+//   case 4:
+//   case "Thursday":
+//     dayMsg = `Today is Thursday`;
+//     break;
+//   case 5:
+//   case "Friday":
+//     dayMsg = `Today is Friday`;
+//     break;
+//   case 6:
+//   case "Saturday":
+//     dayMsg = `Today is Saturday`;
+//     break;
+//   case 7:
+//   case "Sunday":
+//     dayMsg = `Today is Sunday`;
+//     break;
+//   default:
+//     dayMsg = "Day is undefined.";
+// }
+
+// console.log(dayMsg);
+// -------------------------------------------------------------------------------------------------------------------------------------------------
+// For Loop
+
+// BASIC SYNTAX:
+// for (initialization; condition; increment) {
+//   // Code to execute
+// }
+
+// Loop Through Table Syntax:
+// for (let key in object) {
+//   // Code to execute
+// }
+
+// ${} is essential on accessing variables in backticks(``)
+
+// 2 Ways to use For Loop:
+
+// const array = {
+//   apple: "red",
+//   banana: "yellow",
+//   grape: "purple",
+// };
+
+// //1. Count Index First And Loop Through the Object/Array/Folder with the number of index
+
+// const arrayIndex = Object.keys(array); //Object.keys() is a built-in JavaScript method that returns an array of a given object's own enumerable property names (keys). This can be very useful when you want to iterate over the keys of an object.
+
+// for (let index = 0; index < arrayIndex.length; index++) {
+//   const name = arrayIndex[index];
+//   const value = array[arrayIndex[index]];
+//   console.log(`1. Name: ${name} ||| Value: ${value}`);
+// }
+
+// //2. Loop Through The Object/Array/Folder
+
+// for (let index in array) {
+//   const name = index;
+//   const value = array[index]; // Accessing the element using the index
+//   console.log(`2. Name: ${name} ||| Value: ${value}`);
+// }
+
+// Challenge
+// const fullName = "John Michael Buho Sarita";
+
+// for (let index = 0; index <= 100; index++) {
+//   console.log(`Index: ${index} ||| Name: ${fullName}`);
+// }
+
+// Use < or > in for loops cuz = checks if truelity or not and == checks if only the same value/equality so use < or > or <= or >= when in for loop
+// --------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+// While Loop
+
+// Basic Syntax:
+// while (condition) {
+//     // Code to be executed
+//   }
+
+// How It Works
+// Condition Check: Before each iteration, the condition is evaluated.
+// Execution: If the condition is true, the code inside the loop runs.
+// Repeat: After executing the code, the condition is checked again. This continues until the condition is false.
+
+// Example:
+// let count = 0;
+
+// while (count < 5) {
+//   console.log(`Count: ${count}`); // Logs: Count: 0, Count: 1, ..., Count: 4
+//   count++; // Increment count
+// }
+
+// Challenge
+// I made the challenge challenging lol its supposed to be just log ur name 100 times
+// let count = 10;
+
+// const firstNames = [
+//   "Elowen",
+//   "Thalion",
+//   "Kaelith",
+//   "Seraphine",
+//   "Bryndis",
+//   "Fenric",
+//   "Lirael",
+//   "Eryndor",
+//   "Calista",
+//   "Torin",
+// ];
+
+// const lastNames = [
+//   "Stormrider",
+//   "Shadowcrest",
+//   "Ironheart",
+//   "Emberwind",
+//   "Frostwhisper",
+//   "Nightbloom",
+//   "Ravenshadow",
+//   "Brightforge",
+//   "Moonshadow",
+//   "Thundershield",
+// ];
+
+// while (count < 100) {
+//   // Change to count < 100 to stop at 100
+//   ++count;
+//   const randomFirstName =
+//     firstNames[Math.floor(Math.random() * firstNames.length)];
+//   const randomLastName =
+//     lastNames[Math.floor(Math.random() * lastNames.length)];
+//   const randomAge = Math.floor(Math.random() * (500 - 10 + 1)) + 10; // Random age between 10 and 500
+//   const fullInfo = `Name: ${randomFirstName} ${randomLastName} ||| Age: ${randomAge}`;
+//   console.log(fullInfo, count);
+// }
+// ------------------------------------------------------------------------------------------------------------------------------------
+
+// Logical Operators
+// 1. Logical AND(&&) in roblox its[if value and value == 1 then]
+//  -- TRUE if both the operands/boolean values are true, else evaluates to FALSE
+// 2. Logical OR(||) in roblox its[if value == 1 or 2 then]
+// -- TRUE if either of the operands/boolean values is true. evaluates to false if both are FALSE
+// 3. Logical NOT(!) in roblox its[if not value then]
+// TRUE if the operand is false and vice-versa.
+
+// -----------------------------------------------------------------------------------------------------------------------------------------------------
+
+// Arrays
+// --> 0 Index Base(or basically start in 0)
+
+// Arrays are data structures that store multiple values in a single variable. They allow you to group related items together, making it easier to manage and access them.
+
+// Indexed: Each element in an array has a specific position called an index, starting from 0. For example, in an array ["apple", "banana", "cherry"], "apple" is at index 0, "banana" at 1, and "cherry" at 2.
+
+// Ordered: The order of elements is preserved. If you add elements in a certain sequence, they remain in that sequence when you access them.
+
+// Dynamic: You can change the size of an array, adding or removing elements as needed.
+
+// Mixed Types: In JavaScript, an array can hold values of different types, such as numbers, strings, or even other arrays.
+
+// EXAMPLE:
+
+// const fruits = ["apple", "banana", "cherry"];
+
+// // Accessing elements
+// console.log(fruits[0]); // Outputs: apple
+
+// // Adding an element
+// fruits.push("date"); // Now fruits is ["apple", "banana", "cherry", "date"]
+
+// // Removing an element
+// fruits.pop(); // Now fruits is ["apple", "banana", "cherry"]
+
+// // Length of the array
+// console.log(fruits.length); // Outputs: 3
+
+// const array = {
+//   apple: "red",
+//   banana: "yellow",
+//   grape: "purple",
+// };
+
+// const arrayIndex = Object.keys(array); //returns the array without the value ["apple", "banana", "cherry"] easy way to access index for 1st method of for loop
+
+// NESTED ARRAY:
+// const nestedArray = [
+//   ["apple", "banana", "cherry"],
+//   ["dog", "cat", "fish"],
+//   ["red", "blue", "green"],
+// ];
+
+// console.log(nestedArray[0][1]); // Output: "banana"
+// console.log(nestedArray[2][0]); // Output: "red"
+// --------------------------------------------------------------------------------------------------------
+// | Method     |                                      Description                                       |
+// | ---------- | :------------------------------------------------------------------------------------: |
+// | concat()   |                     joins two or more arrays and returns a result                      |
+// | includes() |                    checks if an array contains a specified element                     |
+// | push()     |    adds a new element to the end of an array and returns the new length of an array    |
+// | unshift()  | adds a new element to the beginning of an array and returns the new length of an array |
+// | pop()      |          removes the last element of an array and returns the removed element          |
+// | shift()    |         removes the first element of an array and returns the removed element          |
+// | sort()     |          sorts the elements alphabetically in strings and in ascending order           |
+// | slice()    |                 selects the part of an array and returns the new array                 |
+// | splice()   |             removes or replaces existing elements and/or adds new elements             |
+// --------------------------------------------------------------------------------------------------------
+
+// OBJECTS
+// Objects and Array are just the same concept of table's in roblox(you can also use nested)
+// use let for it to be changeable and const if not
+// THE DIFFERENCE IN ARRAY AND OBJECT IS Object has Variable/key and Array only has index or no value
+// Objects use named keys (like name or age).
+// Arrays use numeric indices (like 0, 1, 2).
+// Examples
+
+// OBJECT
+// let Data = {
+//   ["PlayerData"]: {
+//     Level: 0,
+//     Exp: 0,
+//     Wins: 0,
+//     Losses: 0,
+//     Kill: 0,
+//     Death: 0,
+//     PlayTime: 0,
+//     RankRating: 0,
+//   },
+// };
+// To delete a object
+// delete Data["PlayerData"].Level
+// --------------------------
+// ARRAY
+// const fruits = ['apple', 'banana', 'orange'];
+
+// CHALLENGE
+// const Cars = {
+//   Toyota: {
+//     AE86: {
+//       Horsepower: 130,
+//       Color: "Red",
+//     },
+//     JZX90: {
+//       Horsepower: 200,
+//       Color: "White",
+//     },
+//   },
+//   Nissan: {
+//     SilviaS13: {
+//       Horsepower: 175,
+//       Color: "Black",
+//     },
+//     ["350Z"]: {
+//       Horsepower: 306,
+//       Color: "Blue",
+//     },
+//   },
+// };
+
+// for (let brand in Cars) {
+//   for (let model in Cars[brand]) {
+//     let message = `Model:${model} Brand:${brand} Horsepower:${Cars[brand][model]["Horsepower"]} Color:${Cars[brand][model]["Color"]}`;
+//     console.log(message);
+//   }
+// }
+
+// ----------------------------------------------------------------------------------------------------------------------
+// FUNCTIONS
+// Function Declaration: This defines a function. It starts with the function keyword, followed by the function name, parentheses for parameters, and a block of code inside curly braces.
+// Parameters: These are the values you can pass into a function. In the example above, name is a parameter.
+// Return Statement: This specifies the value that the function will output when it is called. In the example, the function returns a greeting message.
+// Function Call: This is how you execute the function. You use the function name followed by parentheses, passing any required arguments.
+
+// EXAMPLE:
+// function greet(name) {
+//     return `Hello, ${name}!`;
+// }
+// const message = greet("Alice"); // Calls the function
+// console.log(message); // Output: "Hello, Alice!"
+
+// CHALLENGE:
+// FUNCTION DECLARATION
+// function multiply(a, b) {
+//   return a * b;
+// }
+// console.log(multiply(4, 12928));//OUTPUTS: 51712
+// ------------------------------------------------------
+// FUNCTION EXPRESSION
+// const multiply = function(a, b) {
+//   return a * b;
+// }
+// console.log(multiply(4, 12928));//OUTPUTS: 51712
+// ----------------------------------------------------------------------------------------------------------------------------
+// CALLBACK FUNCTION
+// A callback function is a function that you pass as an argument to another function and is intended to be executed after a certain event or condition is met.
+// EXAMPLE:
+// function greet(name, callback) {
+//   console.log(`Hello, ${name}!`);
+//   callback(); // Call the callback function after greeting
+// }
+
+// function sayGoodbye() {
+//   console.log("Goodbye!");
+// }
+
+// // Calling the greet function and passing sayGoodbye as a callback
+// greet("Alice", sayGoodbye);
+
+// EXPLANATION
+// greet function: This function takes a name and a callback function as arguments. It logs a greeting and then calls the callback.
+// sayGoodbye function: This is the callback function that gets executed after the greeting.
+// Function Call: When you call greet("Alice", sayGoodbye), it first logs the greeting and then executes the sayGoodbye function.
+
+// CHALLENGE:
+// const showCallFunc = function (fn) {
+//   let number = 10;
+//   return fn(number);
+// };
+
+// const callBack = function (number) {
+//   return number;
+// };
+
+// console.log(showCallFunc(callBack));
+// ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// SCOPE
+// Local Scope: Variables declared inside a function or block are only accessible within that function or block.
+
+// EX(FUNCTION SCOPE):
+// function localScope() {
+//     let localVar = "I am local";
+//     console.log(localVar); // Accessible here
+// }
+
+// localScope(); // Output: I am local
+// console.log(localVar); // Error: localVar is not defined
+
+// EX(BLOCK SCOPE):
+// if (true) {
+//     let blockVar = "I am block scoped";
+//     console.log(blockVar); // Accessible here
+// }
+
+// console.log(blockVar); // Error: blockVar is not defined
+// -------------------------------------------------------------------------------------------------------------------------
+// Global Scope: If you declare a variable outside of any function or block, it can be accessed from anywhere in your code.
+
+// EX:
+// let globalVar = "I am global";
+
+// function showGlobal() {
+//     console.log(globalVar); // Accessible here
+// }
+
+// showGlobal(); //
+// ------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// JSON
+// JSON (JavaScript Object Notation) is a lightweight data interchange format that is easy for humans to read and write and easy for machines to parse and generate. It is commonly used for transmitting data between a server and a web application.
+// Roblox MODULE SCRIPT and JAVASCRIPT JSON are similar but in JSON you cant do functions but can store array/table,objects,etc
+
+// JSON is based on two structures:
+// Objects: Unordered collections of key/value pairs, enclosed in curly braces {}.
+// Arrays: Ordered lists of values, enclosed in square brackets [].
+
+// Data Types Supported:
+// Strings: "Hello"
+// Numbers: 123, 45.67
+// Booleans: true, false
+// Null: null
+// Objects: { "key": "value" }
+// Arrays: [1, 2, 3]
+
+// Common Uses of JSON:
+// APIs: JSON is commonly used to transmit data in web APIs. For example, a server may send user information in JSON format.
+// Configuration Files: Many applications use JSON files for configuration settings due to their readability.
+// Data Storage: JSON can be used to store data in NoSQL databases like MongoDB.
+
+// METHODS OF JSON IN JAVASCRIPT
+// JSON.parse(): Converts a JSON string into a JavaScript object.
+// JSON.stringify(): Converts a JavaScript object into a JSON string.
+
+// WHEN PARSING ARRAYS USE Spread OPERATOR(...) (ITS LIKE SELECT ALL)
+
+// EX:
+// const basket1 = ["apple", "banana"];
+// const basket2 = ["cherry", "date"];
+
+// If you want to add all the fruits from basket2 to basket1, you can use the spread operator:
+// basket1.push(...basket2);
+// // Now basket1 has: ["apple", "banana", "cherry", "date"]
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// DATE AND TIME
+
+// Working with Dates and Times in JavaScript
+
+// Create a new date object for the current date and time
+// const now = new Date();
+// console.log("Current Date and Time:", now);
+
+// // Create a specific date object for September 23, 2024
+// const specificDate = new Date('2024-09-23');
+// console.log("Specific Date:", specificDate);
+
+// // Access different components of the current date
+// const year = now.getFullYear(); // Get year
+// const month = now.getMonth(); // Get month (0-based index)
+// const day = now.getDate(); // Get day
+// const hours = now.getHours(); // Get hours
+// const minutes = now.getMinutes(); // Get minutes
+// const seconds = now.getSeconds(); // Get seconds
+
+// // Log the components
+// console.log(`Year: ${year}, Month: ${month + 1}, Day: ${day}`);
+// console.log(`Time: ${hours}:${minutes}:${seconds}`);
+
+// // Format date as a string
+// const formattedDate = now.toLocaleDateString(); // e.g., "9/23/2024"
+// const formattedTime = now.toLocaleTimeString(); // e.g., "12:34:56 PM"
+// console.log("Formatted Date:", formattedDate);
+// console.log("Formatted Time:", formattedTime);
+
+// // Using setTimeout to execute a function after a delay
+// setTimeout(() => {
+//     console.log("This message is shown after 3 seconds.");
+// }, 3000); // 3000 milliseconds = 3 seconds
+
+// // Using setInterval to repeatedly execute a function every interval
+// let count = 0; // Initialize a counter
+// const intervalId = setInterval(() => {
+//     count++;
+//     console.log(`This message appears every 2 seconds. Count: ${count}`);
+
+//     // Stop the interval after 5 counts
+//     if (count === 5) {
+//         clearInterval(intervalId); // Stop the interval
+//         console.log("Interval has been cleared.");
+//     }
+// }, 2000); // 2000 milliseconds = 2 seconds
+// PS: setInterval is like the spawn function in Roblox (it allows repeated execution like a while loop,
+// but unlike a while loop, it doesn't block other functions from running).
+// PS: setTimeout is similar to task.wait in Roblox. However, setTimeout allows you to specify a function
+// to run after a delay, whereas task.wait simply pauses execution for a certain amount of time.
+// In setTimeout, a new function runs after the specified delay, while task.wait only delays the code
+// execution without calling a new function.
+//--------------------------------------------------------------------------------------------------------------------------------
